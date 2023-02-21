@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: black;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 20px;
+  width: 100%;
+  border-bottom: 2px solid #7fff8c;
+  border-top: 2px solid #7fff8c;
+  padding: 5vh 5vw;
+  z-index: 2;
+}
+header h1 a {
+  font: bold 50px/50px "Sedgwick Ave Display";
+  color: rgb(251, 62, 100);
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  text-shadow: 5px 5px 5px #eefbce;
+}
+header #gnb {
+  display: flex;
+}
+header #gnb li {
+  margin: 0px 40px;
+}
+header #gnb li a {
+  font: 25px/1 "Sedgwick Ave Display";
+  color: rgb(251, 62, 100);
+  letter-spacing: 1px;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+header .sns {
+  display: flex;
+}
+header .sns li {
+  margin: 0px 10px;
+}
+header .sns li a {
+  font-size: 20px;
+  color: rgb(251, 62, 100);
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+header #snb {
+  display: none;
+}
+header .btn-menu {
+  font-size: 24px;
+  display: none;
+  color: rgba(255, 129, 192, 0.892);
+  text-shadow: 3px 3px 3px #000;
+}
+
+figure {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+figure video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+}
+figure .text {
+  position: absolute;
+  left: 6vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+figure .text p {
+  font: normal 7vw/1 "Sedgwick Ave Display";
+  color: rgba(255, 129, 192, 0.892);
+  text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+}
+figure .text ul {
+  display: flex;
+  margin-top: 30px;
+}
+figure .text ul li {
+  margin: 0px 20px;
+}
+figure .text ul li i {
+  font-size: 20px;
+  color: rgba(161, 254, 168, 0.892);
+  margin-right: 10px;
+}
+figure .text ul li strong {
+  font: 16px/1 "Sedgwick Ave Display";
+  color: rgba(255, 129, 192, 0.892);
+  letter-spacing: 1px;
+}
+
+footer {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  font: 12px/1 "arial";
+  color: rgba(161, 254, 168, 0.892);
+  letter-spacing: 2px;
+  padding: 8vh 0;
+}
+
+@media screen and (max-width: 968px) {
+  header #gnb {
+    display: none;
+  }
+  header .sns {
+    display: none;
+  }
+  header .btn-menu {
+    display: block;
+  }
+  header #snb {
+    display: block;
+  }
+  header #snb .sub-menu {
+    position: absolute;
+    right: 5vw;
+    background-color: rgba(162, 255, 171, 0.768627451);
+    border: 1px solid rgb(251, 62, 100);
+    border-radius: 8px;
+    text-align: right;
+    padding: 10px 20px;
+    transition: 0.4s;
+  }
+  header #snb .sub-menu.hide {
+    opacity: 0;
+  }
+  header #snb .sub-menu li {
+    padding: 8px 0;
+    font: 20px/1 "Sedgwick Ave Display";
+  }
+  header #snb .sub-menu li a {
+    color: rgb(87, 13, 87);
+  }
+  header #snb .sub-menu li a i {
+    margin: 8px;
+  }
+  figure .text p {
+    font-size: 15vw;
+  }
+}/*# sourceMappingURL=style.css.map */

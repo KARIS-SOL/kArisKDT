@@ -1,0 +1,202 @@
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+//font-family: 'Covered By Your Grace', cursive;
+
+// RESET from "_reset.scss "
+@import "reset";
+
+$font-color: rgb(251, 62, 100);
+
+// COMMON PART
+body {
+  background-color: black;  //css 확인하려고 배경부터 깔아보기 
+}
+
+// HEADER
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; //수직정렬
+  top: 20px;
+  width: 100%;
+  border-bottom: 2px solid #7fff8c;
+  border-top: 2px solid #7fff8c;
+  padding: 5vh 5vw; //양옆을 조금 떨어뜨리기 
+  z-index: 2;  //영상이 뒤에 나오니깐 묻히지말라고 
+
+  h1 a {
+    font: bold 50px/50px 'Sedgwick Ave Display';
+    color: $font-color;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    text-shadow:5px 5px 5px #eefbce;
+  }
+
+  #gnb {
+    display: flex;
+
+    li {
+      margin: 0px 40px;
+
+      a {
+        font: 25px/1 'Sedgwick Ave Display';
+        color: $font-color;
+        letter-spacing: 1px;
+        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+        
+      }
+    }
+  }
+
+  .sns {
+    display: flex;
+
+    li {
+      margin: 0px 10px;
+
+      a {
+        font-size: 20px;
+        color: $font-color;
+        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+         }
+    }
+
+
+  }
+  
+  #snb {
+    display: none;
+  }
+
+
+  .btn-menu {
+    font-size: 24px;
+    display: none;
+    color: rgba(255, 129, 192, 0.892);
+    text-shadow:3px 3px 3px #000;
+  }  
+}
+
+// VIDEO
+figure {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;  //위랑 왼쪽에 안튀어나가게
+  left: 0;
+  overflow: hidden;
+
+  video {
+    width: 100%;  //넓이 높이 전부 부모로부터 100%
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+   }
+  
+  .text {
+    position: absolute;
+    left: 6vw;
+    top: 50%;
+    transform: translateY(-50%);
+
+    p {
+      font: normal 7vw/1 "Sedgwick Ave Display";
+      color: rgba(255, 129, 192, 0.892);
+      text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+      
+    }
+
+    ul {
+      display: flex;
+      margin-top: 30px;
+
+      li {
+        margin: 0px 20px;
+
+        i {
+          font-size: 20px;
+          color: rgba(161, 254, 168, 0.892);
+          margin-right: 10px;
+        }
+
+        strong {
+          font: 16px/1 "Sedgwick Ave Display";
+          color: rgba(255, 129, 192, 0.892);
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+}
+
+//FOOTER
+footer {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  font: 12px/1 "arial";
+  color: rgba(161, 254, 168, 0.892);
+  letter-spacing: 2px;
+  padding: 8vh 0;
+}
+
+// 반응형
+@media screen and (max-width: 968px) {
+  header {
+    #gnb {
+      display: none;
+    }
+
+    .sns {
+      display: none;
+    }
+
+    .btn-menu {
+      display: block;
+    }
+
+    #snb {
+      display: block;
+
+      .sub-menu {
+        position: absolute;
+        right: 5vw; //햄버거랑 같이움직이게 맞춤
+        background-color: #a2ffabc4;
+        border: 1px solid $font-color;
+        border-radius: 8px;
+        text-align: right;
+        padding: 10px 20px;
+        transition: 0.4s;  //부모요소에게 주어야 켜질때 꺼질때 전부 0.4s 
+  
+        &.hide {
+          opacity: 0;
+        }
+  
+        li {
+          padding: 8px 0;
+          font: 20px/1 "Sedgwick Ave Display";
+         
+          a {
+            color: rgb(87, 13, 87);
+            i {
+              margin: 8px;
+            }
+          }
+          
+        }
+      }
+    }
+  }
+
+  figure {
+    .text {
+      p {
+        font-size: 15vw;
+      }
+    }
+  }
+}
